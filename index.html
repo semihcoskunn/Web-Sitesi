@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Ana Sayfa</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -15,23 +17,39 @@
                 <a href="#">404</a>
             </div>
             <ul>
-                <li><a href="#" class="active">Ana Sayfa</a></li>
-                <li><a href="#">Hakkımda</a></li>
-                <li><a href="#">Projelerim</a></Projelerim>
-                </li>
-                <li><a href="#">İletişim</a></li>
+                <li><a href="#home" class="active">Ana Sayfa</a></li>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#projects">Projelerim</a></li>
+                <li><a href="#contact">İletişim</a></li>
             </ul>
         </div>
-        <div class="center"></div>
-        <h1>Web Sitesine</h1>
-        <h2>Hoşgeldiniz</h2>
-        <div class="buttons">
-            <button>Daha Fazla...</button>
-            <button>Abone Ol</button>
-            <button>Batuhanın amk</button>
-        </div>
-    </div>
 
+
+        <section id="home" style="height: 100vh;">
+            <div class="center">
+                <h1 id="text1"></h1>
+                <h2 id="text2"></h2>
+            </div>
+            <div class="buttons">
+                <button>Daha Fazla</button>
+            </div>
+        </section>
+
+
+        <section id="about" style="height: 100vh;"></section>
+        <section id="projects" style="height: 100vh;"></section>
+
+
+        <section id="contact" class="contact-section">
+            <h2>İletişim</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Ad Soyad" required>
+                <input type="email" placeholder="E-posta" required>
+                <textarea placeholder="Mesajınız" required></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+        </section>
+    </div>
 </body>
 
 </html>

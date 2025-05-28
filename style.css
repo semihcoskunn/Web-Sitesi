@@ -4,26 +4,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Tavsiye edilir, kutu modelini düzeltir */
+}
+body {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .container {
-    background: url('basitadam.jpg') no-repeat center center;
     height: 100vh;
-    background-size: unset;
-    position: relative;
-    /* 100% 100% yerine daha uyumlu */
 }
 
 .container .navbar {
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 80px;
-    /* Muhtemelen 80% değil, 80px olmalı */
-    background: blue;
+    background: rgb(2, 2, 89);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000;
 }
+
 
 .navbar .logo {
     margin-left: 50px;
@@ -60,13 +65,108 @@
 
 .navbar ul li a.active,
 .navbar ul li a:hover {
-    background:#ff6e00;
+    background-color: black;
     border-radius: 2px;
 }
 
 .container .center {
     position: absolute;
     top: 50%;
-    left: 50%;transform: translate(-50%, -50%);
-        
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Ubuntu Mono', monospace;
+    user-select: none;
+}
+
+#text1,
+#text2 {
+    font-size: 48px;
+    color: black;
+}
+
+.karsilama h1{
+    color: black;
+    font-family:'Ubuntu Mono' monospace;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.container .buttons {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons button {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+    background: color black;
+}
+
+.buttons :active {
+    transform: scale(0.95);
+    background-color: black;
+}
+
+.contact-section {
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-family: 'Ubuntu Mono', monospace;
+    text-align: center ;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e55d00;
+}
+
+html {
+    scroll-behavior: smooth;
 }

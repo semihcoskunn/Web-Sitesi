@@ -39,3 +39,35 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 3000);
     });
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar ul li a");
+
+    function activateLink() {
+        let current = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        // Eğer sayfanın en altına gelinmişse 'contact' aktif olmalı
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+            current = "contact";
+        }
+
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").substring(1) === current) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", activateLink);
+    activateLink(); // Sayfa yüklenince de kontrol et
+});
